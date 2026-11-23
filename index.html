@@ -17,7 +17,7 @@
   <div class="web web--top-left" aria-hidden="true"></div>
   <div class="web web--right" aria-hidden="true"></div>
 
-  <header class="header" id="top">
+  <header class="header" id="top" data-reveal="nav">
     <a class="brand" href="#home" aria-label="Rizki Permana Portfolio">
       <span class="brand__logo">RP</span>
       <span class="brand__divider"></span>
@@ -56,25 +56,61 @@
   <main>
     <!-- HERO -->
     <section class="hero page-wrap" id="home">
-      <div class="hero__copy">
-        <div class="eyebrow">P O R T F O L I O <i></i></div>
-        <h1 class="hero__name"><span>RIZKI</span><em>PERMANA</em></h1>
-        <h2>Web Developer &amp;<br>Graphic Designer</h2>
-        <p>Portfolio pribadi yang menampilkan karya, keahlian, dan perjalanan belajar saya di dunia teknologi dan desain.</p>
-        <div class="hero__actions">
+      <div class="hero__copy" data-reveal>
+        <div class="eyebrow" data-reveal>P O R T F O L I O <i></i></div>
+        <h1 class="hero__name" data-reveal><span>RIZKI</span><em>PERMANA</em></h1>
+        <h2 data-reveal>Web Developer &amp;<br>Graphic Designer</h2>
+        <p data-reveal>Portfolio pribadi yang menampilkan karya, keahlian, dan perjalanan belajar saya di dunia teknologi dan desain.</p>
+        <div class="hero__actions" data-reveal>
           <a class="button button--red" href="#projects">Lihat Project <b>→</b></a>
           <a class="button button--outline" href="#about">Tentang Saya</a>
         </div>
         <!-- GANTI LINK SOSIAL DI BAWAH INI DENGAN LINK AKUN MILIK ANDA -->
-        <div class="socials" aria-label="Media sosial">
-          <a href="https://github.com/USERNAME-ANDA" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">GH</a>
-          <a href="https://www.linkedin.com/in/USERNAME-ANDA/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">in</a>
-          <a href="https://www.instagram.com/USERNAME-ANDA/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">◎</a>
-          <a href="https://www.youtube.com/@USERNAME-ANDA" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">▶</a>
-        </div>
+     
+<!-- SOCIAL MEDIA -->
+<div class="socials" aria-label="Media sosial" data-reveal>
+
+  <!-- GitHub -->
+  <a href="https://github.com/USERNAME-ANDA"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="GitHub"
+     title="GitHub">
+    <i class="fa-brands fa-github"></i>
+  </a>
+
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/kyyiiuu_/"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Instagram"
+     title="Instagram">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+
+  <!-- Lynk.id -->
+  <a href="https://lynk.id/ourkiyooniuu"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Lynk.id"
+     title="Lynk.id">
+    <i class="fa-solid fa-link"></i>
+  </a>
+
+  <!-- TikTok -->
+  <a href="https://www.tiktok.com/@kiiiiiiy1"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="TikTok"
+     title="TikTok">
+    <i class="fa-brands fa-tiktok"></i>
+  </a>
+
+</div>
+
       </div>
 
-      <div class="hero-banner">
+      <div class="hero-banner" data-reveal="zoom">
         <div class="hero-banner__bg"></div>
         <div class="hero-banner__city"></div>
         <div class="hero-banner__copy">
@@ -85,7 +121,7 @@
         <!-- ASSET SLOT: replace this file with your transparent full-body character image -->
       
 
-<div class="hero-character-reveal" id="heroCharacterReveal">
+<div class="hero-character-reveal" id="heroCharacterReveal" data-reveal="hero-image">
 
   <!-- Gambar Spider-Man sebagai dasar -->
   <img
@@ -110,13 +146,13 @@
 
     <!-- ABOUT -->
     <section class="about page-wrap section" id="about">
-      <div class="about__visual">
+      <div class="about__visual" data-reveal>
         <div class="about__red-shape"></div>
         <div class="about__web"></div>
         <!-- ASSET SLOT: transparent portrait / character image -->
         <img class="about__character asset-slot" src="assets/images/about/rizki-spiderman-about.png" alt="Foto Rizki Permana untuk bagian tentang saya">
       </div>
-      <div class="about__content">
+      <div class="about__content" data-reveal>
         <div class="section-label"><i></i> TENTANG SAYA</div>
         <h2 class="section-title">Halo, Saya <span>Rizki Permana!</span></h2>
         <p>Saya adalah seorang Web Developer dan Graphic Designer yang memiliki minat besar dalam teknologi, desain kreatif, dan pengembangan web. Saya selalu berusaha belajar hal baru untuk menjadi lebih baik dan menciptakan karya yang bermanfaat.</p>
@@ -135,7 +171,7 @@
 
     <div class="section-label"><i></i> PORTFOLIO</div>
 
-    <div class="projects__heading">
+    <div class="projects__heading" data-reveal>
       <div>
         <h2 class="section-title">Karya Terbaik Saya</h2>
         <p>
@@ -168,7 +204,7 @@
 
       
 <!-- WEB DESIGN 1: ID-CARKEY -->
-<article class="project-card"
+<article class="project-card" data-reveal="zoom"
   data-category="web landing"
   data-search="id carkey website kunci keyless mobil motor">
 
@@ -198,7 +234,7 @@
 
 
 <!-- WEB DESIGN 2: SADEYAN COFFEE -->
-<article class="project-card"
+<article class="project-card" data-reveal="zoom"
   data-category="web landing"
   data-search="sadeyan coffee eatery website cafe restoran">
 
@@ -228,7 +264,7 @@
 
 
 <!-- WEB DESIGN 3: BR LAUNDRY -->
-<article class="project-card"
+<article class="project-card" data-reveal="zoom"
   data-category="web landing"
   data-search="br laundry website jasa laundry layanan pakaian">
 
@@ -259,7 +295,7 @@
 
      
 <!-- GRAPHIC DESIGN 1 -->
-<article class="project-card"
+<article class="project-card" data-reveal="zoom"
   data-category="graphic"
   data-search="instagram feed social media template ramen chocolate bakery food beverage">
 
@@ -279,7 +315,7 @@
 </article>
 
 <!-- GRAPHIC DESIGN 2 -->
-<article class="project-card"
+<article class="project-card" data-reveal="zoom"
   data-category="graphic"
   data-search="digital scrapbook photo collage photobook creative layout">
 
@@ -299,7 +335,7 @@
 </article>
 
 <!-- GRAPHIC DESIGN 3 -->
-<article class="project-card"
+<article class="project-card" data-reveal="zoom"
   data-category="graphic"
   data-search="product catalog allatif hijab fashion scarf product showcase">
 
@@ -319,7 +355,7 @@
 </article>
 
 <!-- GRAPHIC DESIGN 4 -->
-<article class="project-card"
+<article class="project-card" data-reveal="zoom"
   data-category="graphic"
   data-search="coffee shop promotional poster coffee marketing iced coffee">
 
@@ -339,7 +375,7 @@
 </article>
 
 <!-- GRAPHIC DESIGN 5 -->
-<article class="project-card"
+<article class="project-card" data-reveal="zoom"
   data-category="graphic"
   data-search="food beverage product advertising chocolate matcha ramen bakery">
 
@@ -359,7 +395,7 @@
 </article>
 
 <!-- GRAPHIC DESIGN 6 -->
-<article class="project-card"
+<article class="project-card" data-reveal="zoom"
   data-category="graphic"
   data-search="business graphic design banner automotive product poster school merchandise">
 
@@ -384,21 +420,21 @@
 
     <!-- SKILLS -->
     <section class="skills page-wrap section" id="skills">
-      <div class="skills__intro">
+      <div class="skills__intro" data-reveal>
         <div class="section-label"><i></i> SKILL</div>
         <h2 class="section-title">Keahlian Saya</h2>
         <p>Teknologi dan tools yang saya kuasai untuk mendukung setiap project.</p>
         <a class="button button--red button--small" href="#contact">Lihat Detail <b>→</b></a>
       </div>
       <div class="skills-grid">
-        <div class="skill-card"><img src="assets/icons/skills/html.jpg" alt=""><b>HTML</b></div>
-        <div class="skill-card"><img src="assets/icons/skills/css.jpg" alt=""><b>CSS</b></div>
-        <div class="skill-card"><img src="assets/icons/skills/javascript.jpg" alt=""><b>JavaScript</b></div>
-        <div class="skill-card"><img src="assets/icons/skills/react.jpg" alt=""><b>React</b></div>
-        <div class="skill-card"><img src="assets/icons/skills/figma.jpg" alt=""><b>Figma</b></div>
-        <div class="skill-card"><img src="assets/icons/skills/photoshop.jpg" alt=""><b>Photoshop</b></div>
-        <div class="skill-card"><img src="assets/icons/skills/canva.jpg" alt=""><b>Canva</b></div>
-        <div class="skill-card"><img src="assets/icons/skills/github.jpg" alt=""><b>GitHub</b></div>
+        <div class="skill-card" data-reveal="zoom"><img src="assets/icons/skills/html.jpg" alt=""><b>HTML</b></div>
+        <div class="skill-card" data-reveal="zoom"><img src="assets/icons/skills/css.jpg" alt=""><b>CSS</b></div>
+        <div class="skill-card" data-reveal="zoom"><img src="assets/icons/skills/javascript.jpg" alt=""><b>JavaScript</b></div>
+        <div class="skill-card" data-reveal="zoom"><img src="assets/icons/skills/react.jpg" alt=""><b>React</b></div>
+        <div class="skill-card" data-reveal="zoom"><img src="assets/icons/skills/figma.jpg" alt=""><b>Figma</b></div>
+        <div class="skill-card" data-reveal="zoom"><img src="assets/icons/skills/photoshop.jpg" alt=""><b>Photoshop</b></div>
+        <div class="skill-card" data-reveal="zoom"><img src="assets/icons/skills/canva.jpg" alt=""><b>Canva</b></div>
+        <div class="skill-card" data-reveal="zoom"><img src="assets/icons/skills/github.jpg" alt=""><b>GitHub</b></div>
       </div>
     </section>
 
@@ -408,7 +444,7 @@
 
   <div class="contact__inner page-wrap">
 
-    <div class="contact__copy">
+    <div class="contact__copy" data-reveal>
       <div class="section-label section-label--light">
         <i></i> KONTAK
       </div>
@@ -426,46 +462,63 @@
       </a>
     </div>
 
-    <div class="contact__details">
+   
+<div class="contact__details" data-reveal>
 
-      <a class="contact__item"
-         href="ikyper41@gmail.com">
+  <!-- EMAIL -->
+  <a class="contact__item"
+     href="ikyper41@gmail.com">
 
-        <span class="contact__icon">✉</span>
+    <span class="contact__icon">
+      <i class="fa-solid fa-envelope"></i>
+    </span>
 
-        <span class="contact__text">
-          <small>Email</small>
-          <strong>ikyper41@gmail.com</strong>
-        </span>
+    <span class="contact__text">
+      <small>Email Address</small>
+      <strong>ikyper41@gmail.com</strong>
+    </span>
 
-        <span class="contact__item-arrow">↗</span>
-      </a>
+    <span class="contact__item-arrow">
+      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    </span>
+  </a>
 
-      <a class="contact__item"
-         href="https://wa.me/6285523922308">
+  <!-- WHATSAPP -->
+  <a class="contact__item"
+     href="https://wa.me/6285523922308"
+     target="_blank"
+     rel="noopener noreferrer">
 
-        <span class="contact__icon">◉</span>
+    <span class="contact__icon">
+      <i class="fa-brands fa-whatsapp"></i>
+    </span>
 
-        <span class="contact__text">
-          <small>WhatsApp</small>
-          <strong>+62 855 2392 2308</strong>
-        </span>
+    <span class="contact__text">
+      <small>WhatsApp</small>
+      <strong>+62 855 2392 2308</strong>
+    </span>
 
-        <span class="contact__item-arrow">↗</span>
-      </a>
+    <span class="contact__item-arrow">
+      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    </span>
+  </a>
 
-      <div class="contact__item contact__item--location">
+  <!-- LOCATION -->
+  <div class="contact__item contact__item--location">
 
-        <span class="contact__icon">⌖</span>
+    <span class="contact__icon">
+      <i class="fa-solid fa-location-dot"></i>
+    </span>
 
-        <span class="contact__text">
-          <small>Lokasi</small>
-          <strong>Kota Tabgerang selatan , indonesia</strong>
-        </span>
+    <span class="contact__text">
+      <small>Location</small>
+      <strong>Tangerang Selatan, Indonesia</strong>
+    </span>
 
-      </div>
+  </div>
 
-    </div>
+</div>
+
 
     <img
       class="contact__mask asset-slot"
