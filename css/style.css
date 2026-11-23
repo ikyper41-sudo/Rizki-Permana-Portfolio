@@ -2218,3 +2218,33 @@ a.contact__item:hover .contact__item-arrow {
     font-size: 22px;
   }
 }
+/* FIX RESPONSIVE MOBILE - MENCEGAH GESER KANAN KIRI */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+@media (max-width: 760px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+  }
+}
