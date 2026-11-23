@@ -2248,3 +2248,13 @@ iframe {
     max-width: 100%;
   }
 }
+/* SEMBUNYIKAN JARING DI LUAR LAYAR HP */
+@media (max-width: 760px) {
+  .web--right {
+    display: none !important;
+  }
+
+  .web--top-left {
+    display: none !important;
+  }
+}
