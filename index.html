@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio Rizki Permana — Web Developer & Graphic Designer.">
+  <title>Rizki Permana | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,700;1,800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Spider-web image assets and interactive cursor layer. -->
+  <canvas class="web-cursor" id="webCursor" aria-hidden="true"></canvas>
+  <div class="web web--top-left" aria-hidden="true"></div>
+  <div class="web web--right" aria-hidden="true"></div>
+
+  <header class="header" id="top">
+    <a class="brand" href="#home" aria-label="Rizki Permana Portfolio">
+      <span class="brand__logo">RP</span>
+      <span class="brand__divider"></span>
+      <span class="brand__text"><strong>Rizki Permana</strong><small>Portfolio</small></span>
+    </a>
+
+    <form class="search" id="searchForm" role="search">
+      <span class="search__icon" aria-hidden="true">⌕</span>
+      <input id="searchInput" type="search" placeholder="Cari project, skill, atau lainnya..." aria-label="Cari project, skill, atau lainnya">
+    </form>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Buka menu" aria-expanded="false">☰</button>
+
+    <nav class="nav" id="nav">
+      <a class="is-active" href="#home">Beranda</a>
+      <a href="#about">Tentang</a>
+      <a href="#projects">Project</a>
+      <a href="#skills">Skill</a>
+      <a href="#contact">Kontak</a>
+    </nav>
+    
+    <!-- LANGUAGE SWITCHER -->
+<div class="language-switcher">
+  <button type="button" class="lang-btn is-active" data-lang="id">
+    ID
+  </button>
+
+  <button type="button" class="lang-btn" data-lang="en">
+    EN
+  </button>
+</div>
+
+    <a class="button button--header" href="#contact"><span>➤</span> Hubungi Saya</a>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero page-wrap" id="home">
+      <div class="hero__copy">
+        <div class="eyebrow">P O R T F O L I O <i></i></div>
+        <h1 class="hero__name"><span>RIZKI</span><em>PERMANA</em></h1>
+        <h2>Web Developer &amp;<br>Graphic Designer</h2>
+        <p>Portfolio pribadi yang menampilkan karya, keahlian, dan perjalanan belajar saya di dunia teknologi dan desain.</p>
+        <div class="hero__actions">
+          <a class="button button--red" href="#projects">Lihat Project <b>→</b></a>
+          <a class="button button--outline" href="#about">Tentang Saya</a>
+        </div>
+        <!-- GANTI LINK SOSIAL DI BAWAH INI DENGAN LINK AKUN MILIK ANDA -->
+        <div class="socials" aria-label="Media sosial">
+          <a href="https://github.com/USERNAME-ANDA" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">GH</a>
+          <a href="https://www.linkedin.com/in/USERNAME-ANDA/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">in</a>
+          <a href="https://www.instagram.com/USERNAME-ANDA/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">◎</a>
+          <a href="https://www.youtube.com/@USERNAME-ANDA" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">▶</a>
+        </div>
+      </div>
+
+      <div class="hero-banner">
+        <div class="hero-banner__bg"></div>
+        <div class="hero-banner__city"></div>
+        <div class="hero-banner__copy">
+          <span class="ribbon">PORTFOLIO</span>
+          <strong>RIZKI PERMANA</strong>
+          <small>Web Developer &amp; Graphic Designer</small>
+        </div>
+        <!-- ASSET SLOT: replace this file with your transparent full-body character image -->
+      
+
+<div class="hero-character-reveal" id="heroCharacterReveal">
+
+  <!-- Gambar Spider-Man sebagai dasar -->
+  <img
+    class="hero-banner__character"
+    src="assets/images/hero/spiderman-rizki.png"
+    alt="Spider-Man">
+
+  <!-- Gambar Rizki yang muncul di dalam spotlight -->
+  <img
+    class="hero-face-reveal"
+    src="assets/images/hero/rizki-face.png"
+    alt="Rizki memakai kostum Spider-Man">
+
+</div>
+
+
+
+</div>
+      </div>
+      <a class="scroll-cue" href="#about" aria-label="Scroll ke tentang saya"><span></span><b>⌄</b></a>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about page-wrap section" id="about">
+      <div class="about__visual">
+        <div class="about__red-shape"></div>
+        <div class="about__web"></div>
+        <!-- ASSET SLOT: transparent portrait / character image -->
+        <img class="about__character asset-slot" src="assets/images/about/rizki-spiderman-about.png" alt="Foto Rizki Permana untuk bagian tentang saya">
+      </div>
+      <div class="about__content">
+        <div class="section-label"><i></i> TENTANG SAYA</div>
+        <h2 class="section-title">Halo, Saya <span>Rizki Permana!</span></h2>
+        <p>Saya adalah seorang Web Developer dan Graphic Designer yang memiliki minat besar dalam teknologi, desain kreatif, dan pengembangan web. Saya selalu berusaha belajar hal baru untuk menjadi lebih baik dan menciptakan karya yang bermanfaat.</p>
+        <div class="about__chips">
+          <span>⌘ &nbsp;Web Developer</span>
+          <span>◉ &nbsp;Graphic Designer</span>
+          <span>✦ &nbsp;Always Learning</span>
+        </div>
+        <a class="button button--red button--small" href="#projects">Selengkapnya <b>→</b></a>
+      </div>
+    </section>
+    
+<!-- PROJECTS -->
+<section class="projects section" id="projects">
+  <div class="page-wrap">
+
+    <div class="section-label"><i></i> PORTFOLIO</div>
+
+    <div class="projects__heading">
+      <div>
+        <h2 class="section-title">Karya Terbaik Saya</h2>
+        <p>
+          Kumpulan karya website dan desain kreatif yang telah saya kerjakan.
+        </p>
+      </div>
+
+      <!-- FILTER PROJECT -->
+      <div class="filters" role="group" aria-label="Filter project">
+        <button class="filter is-active" type="button" data-filter="all">
+          Semua
+        </button>
+
+        <button class="filter" type="button" data-filter="web">
+          Web Design
+        </button>
+
+        <button class="filter" type="button" data-filter="graphic">
+          Graphic Design
+        </button>
+
+        <button class="filter" type="button" data-filter="landing">
+          Landing Page
+        </button>
+      </div>
+    </div>
+
+    <!-- DAFTAR PROJECT -->
+    <div class="project-grid">
+
+      
+<!-- WEB DESIGN 1: ID-CARKEY -->
+<article class="project-card"
+  data-category="web landing"
+  data-search="id carkey website kunci keyless mobil motor">
+
+  <a class="project-card__image project-image--carkey"
+     href="https://ikyper41-sudo.github.io/id-car-key/"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Lihat website ID-CarKEY">
+    <span class="project-tag">WEB DESIGN</span>
+  </a>
+
+  <div class="project-card__info">
+    <div>
+      <h3>ID-CarKEY</h3>
+      <p>Website layanan kunci keyless mobil dan motor</p>
+    </div>
+
+    <a class="project-card__arrow"
+       href="https://ikyper41-sudo.github.io/id-car-key/"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Buka website ID-CarKEY">
+      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    </a>
+  </div>
+</article>
+
+
+<!-- WEB DESIGN 2: SADEYAN COFFEE -->
+<article class="project-card"
+  data-category="web landing"
+  data-search="sadeyan coffee eatery website cafe restoran">
+
+  <a class="project-card__image project-image--sadeyan"
+     href="https://ikyper41-sudo.github.io/Sadaya-kopi/"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Lihat website SADEYAN Coffee">
+    <span class="project-tag">WEB DESIGN</span>
+  </a>
+
+  <div class="project-card__info">
+    <div>
+      <h3>SADEYAN Coffee &amp; Eatery</h3>
+      <p>Website cafe dengan tampilan elegan dan menu digital</p>
+    </div>
+
+    <a class="project-card__arrow"
+       href="https://ikyper41-sudo.github.io/Sadaya-kopi/"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Buka website SADEYAN">
+      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    </a>
+  </div>
+</article>
+
+
+<!-- WEB DESIGN 3: BR LAUNDRY -->
+<article class="project-card"
+  data-category="web landing"
+  data-search="br laundry website jasa laundry layanan pakaian">
+
+  <a class="project-card__image project-image--brlaundry"
+     href="https://ikyper41-sudo.github.io/BR-LAUNDRY-Your-Laundry-OurCare/"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Lihat website BR Laundry">
+    <span class="project-tag">WEB DESIGN</span>
+  </a>
+
+  <div class="project-card__info">
+    <div>
+      <h3>BR LAUNDRY</h3>
+      <p>Website jasa laundry dengan informasi layanan dan harga</p>
+    </div>
+
+    <a class="project-card__arrow"
+       href="https://ikyper41-sudo.github.io/BR-LAUNDRY-Your-Laundry-OurCare/"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Buka website BR Laundry">
+      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    </a>
+  </div>
+</article>
+
+
+     
+<!-- GRAPHIC DESIGN 1 -->
+<article class="project-card"
+  data-category="graphic"
+  data-search="instagram feed social media template ramen chocolate bakery food beverage">
+
+  <div class="project-card__image project-image--instagram">
+    <span class="project-tag">SOCIAL MEDIA DESIGN</span>
+  </div>
+
+  <div class="project-card__info">
+    <div>
+      <h3>Social Media Feed Design</h3>
+      <p>Template Instagram untuk bisnis kuliner dan cafe</p>
+    </div>
+    <span class="project-card__type">
+      <i class="fa-brands fa-instagram"></i>
+    </span>
+  </div>
+</article>
+
+<!-- GRAPHIC DESIGN 2 -->
+<article class="project-card"
+  data-category="graphic"
+  data-search="digital scrapbook photo collage photobook creative layout">
+
+  <div class="project-card__image project-image--scrapbook">
+    <span class="project-tag">DIGITAL SCRAPBOOK</span>
+  </div>
+
+  <div class="project-card__info">
+    <div>
+      <h3>Digital Scrapbook</h3>
+      <p>Desain album foto, photo collage dan scrapbook digital</p>
+    </div>
+    <span class="project-card__type">
+      <i class="fa-solid fa-book-open"></i>
+    </span>
+  </div>
+</article>
+
+<!-- GRAPHIC DESIGN 3 -->
+<article class="project-card"
+  data-category="graphic"
+  data-search="product catalog allatif hijab fashion scarf product showcase">
+
+  <div class="project-card__image project-image--catalog">
+    <span class="project-tag">PRODUCT CATALOG</span>
+  </div>
+
+  <div class="project-card__info">
+    <div>
+      <h3>Fashion Product Catalog</h3>
+      <p>Katalog produk hijab dan fashion collection</p>
+    </div>
+    <span class="project-card__type">
+      <i class="fa-solid fa-book-open"></i>
+    </span>
+  </div>
+</article>
+
+<!-- GRAPHIC DESIGN 4 -->
+<article class="project-card"
+  data-category="graphic"
+  data-search="coffee shop promotional poster coffee marketing iced coffee">
+
+  <div class="project-card__image project-image--poster">
+    <span class="project-tag">PROMOTIONAL DESIGN</span>
+  </div>
+
+  <div class="project-card__info">
+    <div>
+      <h3>Coffee Shop Promotion</h3>
+      <p>Desain promosi produk dan menu minuman kopi</p>
+    </div>
+    <span class="project-card__type">
+      <i class="fa-solid fa-mug-hot"></i>
+    </span>
+  </div>
+</article>
+
+<!-- GRAPHIC DESIGN 5 -->
+<article class="project-card"
+  data-category="graphic"
+  data-search="food beverage product advertising chocolate matcha ramen bakery">
+
+  <div class="project-card__image project-image--campaign">
+    <span class="project-tag">PRODUCT ADVERTISING</span>
+  </div>
+
+  <div class="project-card__info">
+    <div>
+      <h3>Food & Beverage Advertising</h3>
+      <p>Desain iklan produk makanan dan minuman</p>
+    </div>
+    <span class="project-card__type">
+      <i class="fa-solid fa-bullhorn"></i>
+    </span>
+  </div>
+</article>
+
+<!-- GRAPHIC DESIGN 6 -->
+<article class="project-card"
+  data-category="graphic"
+  data-search="business graphic design banner automotive product poster school merchandise">
+
+  <div class="project-card__image project-image--branding">
+    <span class="project-tag">GRAPHIC DESIGN</span>
+  </div>
+
+  <div class="project-card__info">
+    <div>
+      <h3>Business Graphic Design</h3>
+      <p>Desain banner, poster dan kebutuhan visual bisnis</p>
+    </div>
+    <span class="project-card__type">
+      <i class="fa-solid fa-pen-nib"></i>
+    </span>
+  </div>
+</article>
+</div>
+</div>
+</section>
+
+
+    <!-- SKILLS -->
+    <section class="skills page-wrap section" id="skills">
+      <div class="skills__intro">
+        <div class="section-label"><i></i> SKILL</div>
+        <h2 class="section-title">Keahlian Saya</h2>
+        <p>Teknologi dan tools yang saya kuasai untuk mendukung setiap project.</p>
+        <a class="button button--red button--small" href="#contact">Lihat Detail <b>→</b></a>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card"><img src="assets/icons/skills/html.jpg" alt=""><b>HTML</b></div>
+        <div class="skill-card"><img src="assets/icons/skills/css.jpg" alt=""><b>CSS</b></div>
+        <div class="skill-card"><img src="assets/icons/skills/javascript.jpg" alt=""><b>JavaScript</b></div>
+        <div class="skill-card"><img src="assets/icons/skills/react.jpg" alt=""><b>React</b></div>
+        <div class="skill-card"><img src="assets/icons/skills/figma.jpg" alt=""><b>Figma</b></div>
+        <div class="skill-card"><img src="assets/icons/skills/photoshop.jpg" alt=""><b>Photoshop</b></div>
+        <div class="skill-card"><img src="assets/icons/skills/canva.jpg" alt=""><b>Canva</b></div>
+        <div class="skill-card"><img src="assets/icons/skills/github.jpg" alt=""><b>GitHub</b></div>
+      </div>
+    </section>
+
+    <!-- KONTAK: GANTI EMAIL, NOMOR WHATSAPP, DAN LOKASI DI BAGIAN INI -->
+<section class="contact" id="contact">
+  <div class="contact__web" aria-hidden="true"></div>
+
+  <div class="contact__inner page-wrap">
+
+    <div class="contact__copy">
+      <div class="section-label section-label--light">
+        <i></i> KONTAK
+      </div>
+
+      <h2>Mari Terhubung!</h2>
+
+      <p>
+        Punya ide atau project yang ingin dikerjakan bersama?
+        Saya terbuka untuk berdiskusi dan berkolaborasi.
+      </p>
+
+      <a class="button button--red"
+         href="ikyper41@gmail.com">
+        Hubungi Saya <b>→</b>
+      </a>
+    </div>
+
+    <div class="contact__details">
+
+      <a class="contact__item"
+         href="ikyper41@gmail.com">
+
+        <span class="contact__icon">✉</span>
+
+        <span class="contact__text">
+          <small>Email</small>
+          <strong>ikyper41@gmail.com</strong>
+        </span>
+
+        <span class="contact__item-arrow">↗</span>
+      </a>
+
+      <a class="contact__item"
+         href="https://wa.me/6285523922308">
+
+        <span class="contact__icon">◉</span>
+
+        <span class="contact__text">
+          <small>WhatsApp</small>
+          <strong>+62 855 2392 2308</strong>
+        </span>
+
+        <span class="contact__item-arrow">↗</span>
+      </a>
+
+      <div class="contact__item contact__item--location">
+
+        <span class="contact__icon">⌖</span>
+
+        <span class="contact__text">
+          <small>Lokasi</small>
+          <strong>Kota Tabgerang selatan , indonesia</strong>
+        </span>
+
+      </div>
+
+    </div>
+
+    <img
+      class="contact__mask asset-slot"
+      src="assets/images/backgrounds/spiderman-mask.svg"
+      alt=""
+    >
+
+  </div>
+</section>
+
+
+  <script src="js/script.js"></script>
+</body>
+</html>
