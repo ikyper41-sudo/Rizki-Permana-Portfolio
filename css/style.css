@@ -297,31 +297,37 @@ img {
   margin-top: 22px;
 }
 
+
+/* SOCIAL MEDIA ICONS */
 .socials {
   display: flex;
+  align-items: center;
   gap: 12px;
   margin-top: 20px;
 }
 
-.socials a,
-.footer__socials a {
-  display: grid;
-  width: 39px;
-  height: 39px;
-  place-items: center;
-  border: 1px solid #cbd0d8;
-  border-radius: 10px;
-  background: var(--white);
-  font-size: 16px;
-  font-weight: 800;
-  transition: transform .2s ease, border-color .2s ease;
+.socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #dfe1e7;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #171717;
+  font-size: 19px;
+  transition: all .3s ease;
 }
 
-.socials a:hover,
-.footer__socials a:hover {
-  transform: translateY(-3px);
-  border-color: var(--red);
+.socials a:hover {
+  transform: translateY(-5px);
+  border-color: #e50925;
+  background: #e50925;
+  color: #ffffff;
+  box-shadow: 0 7px 18px #e5092533;
 }
+
 
 /* Hero banner and character image */
 .hero-banner {
@@ -1866,5 +1872,349 @@ a.contact__item:hover .contact__item-arrow {
 
   .menu-toggle {
     order: 3;
+  }
+}
+
+
+/* =========================================
+   SPIDER-MAN CINEMATIC FACE REVEAL
+========================================= */
+
+.hero-character-reveal {
+  position: absolute;
+  z-index: 4;
+  right: 2%;
+  bottom: -4%;
+  width: 48%;
+  height: 112%;
+
+  --spot-x: 50%;
+  --spot-y: 30%;
+  --spot-radius: 145px;
+
+  cursor: default;
+
+  animation: hero-float 8s ease-in-out infinite;
+}
+
+/* GAMBAR SPIDER-MAN UTAMA */
+.hero-character-reveal .hero-banner__character {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  object-position: center bottom;
+
+  z-index: 1;
+  opacity: 1;
+
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.2));
+
+  transition: opacity 1.2s ease;
+
+  pointer-events: none;
+}
+
+/* GAMBAR WAJAH */
+.hero-character-reveal .hero-face-reveal {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  object-position: center bottom;
+
+  z-index: 2;
+  opacity: 0;
+
+  clip-path: circle(
+    0px at var(--spot-x) var(--spot-y)
+  );
+
+  transition:
+    opacity 1s ease,
+    clip-path 1.2s cubic-bezier(.22, 1, .36, 1);
+
+  pointer-events: none;
+}
+
+/* SAAT EFEK AKTIF */
+.hero-character-reveal.is-active
+.hero-banner__character {
+  opacity: 0.15;
+}
+
+.hero-character-reveal.is-active
+.hero-face-reveal {
+  opacity: 1;
+
+  clip-path: circle(
+    var(--spot-radius) at var(--spot-x) var(--spot-y)
+  );
+}
+
+/* CAHAYA HALUS */
+.hero-character-reveal::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 3;
+  pointer-events: none;
+
+  opacity: 0;
+
+  background: radial-gradient(
+    circle at var(--spot-x) var(--spot-y),
+    rgba(255, 255, 255, 0.08) 0%,
+    transparent 65%
+  );
+
+  transition: opacity 1.2s ease;
+}
+
+.hero-character-reveal.is-active::after {
+  opacity: 1;
+}
+
+/* ANIMASI MELAYANG */
+@keyframes hero-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* TABLET */
+@media (max-width: 760px) {
+  .hero-character-reveal {
+    width: 45%;
+    height: 105%;
+    right: 2%;
+
+    --spot-radius: 110px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 520px) {
+  .hero-character-reveal {
+    width: 49%;
+    height: 100%;
+    right: 0;
+
+    --spot-radius: 90px;
+  }
+}
+
+/* AKSESIBILITAS */
+@media (prefers-reduced-motion: reduce) {
+  .hero-character-reveal {
+    animation: none;
+  }
+
+  .hero-character-reveal .hero-face-reveal,
+  .hero-character-reveal .hero-banner__character {
+    transition: none;
+  }
+}
+
+
+
+/* =========================================================
+   17. PAGE ENTRANCE REVEAL
+   Digunakan bersama JavaScript IntersectionObserver.
+   Elemen akan muncul setelah class .is-visible ditambahkan.
+   ========================================================= */
+
+/* Kondisi awal: elemen menunggu animasi */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(34px);
+  transition:
+    opacity .75s ease,
+    transform .75s cubic-bezier(.22, 1, .36, 1);
+  will-change: opacity, transform;
+}
+
+/* Elemen sudah masuk ke layar */
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Header masuk sedikit dari atas */
+.header[data-reveal="nav"] {
+  transform: translateY(-18px);
+}
+
+.header[data-reveal="nav"].is-visible {
+  transform: translateY(0);
+}
+
+/* Banner masuk dengan efek zoom lembut */
+[data-reveal="zoom"] {
+  transform: translateY(24px) scale(.96);
+}
+
+[data-reveal="zoom"].is-visible {
+  transform: translateY(0) scale(1);
+}
+
+/*
+  Karakter hero tetap memakai animasi hero-float yang sudah ada.
+  Karena itu, bagian ini hanya menganimasikan opacity agar
+  transform dari hero-float tidak saling bertabrakan.
+*/
+.hero-character-reveal[data-reveal="hero-image"] {
+  opacity: 0;
+  transition: opacity .9s ease;
+}
+
+.hero-character-reveal[data-reveal="hero-image"].is-visible {
+  opacity: 1;
+}
+
+/* Project muncul bergantian */
+.project-card[data-reveal] {
+  transition-delay: 0s;
+}
+
+.project-card[data-reveal].is-visible:nth-child(3n + 1) {
+  transition-delay: .05s;
+}
+
+.project-card[data-reveal].is-visible:nth-child(3n + 2) {
+  transition-delay: .12s;
+}
+
+.project-card[data-reveal].is-visible:nth-child(3n) {
+  transition-delay: .19s;
+}
+
+/* Skill cards muncul bergantian */
+.skill-card[data-reveal].is-visible:nth-child(4n + 1) {
+  transition-delay: .04s;
+}
+
+.skill-card[data-reveal].is-visible:nth-child(4n + 2) {
+  transition-delay: .10s;
+}
+
+.skill-card[data-reveal].is-visible:nth-child(4n + 3) {
+  transition-delay: .16s;
+}
+
+.skill-card[data-reveal].is-visible:nth-child(4n) {
+  transition-delay: .22s;
+}
+
+/* Hilangkan animasi saat pengguna meminta reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal],
+  [data-reveal].is-visible {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    transition-delay: 0s !important;
+    will-change: auto;
+  }
+}
+
+/* Pastikan animasi tidak membuat konten melebar di layar kecil */
+@media (max-width: 760px) {
+  [data-reveal] {
+    transform: translateY(24px);
+    transition-duration: .65s;
+  }
+
+  [data-reveal="zoom"] {
+    transform: translateY(18px) scale(.98);
+  }
+
+  [data-reveal="zoom"].is-visible {
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* =========================================
+   FIX POSISI KEPALA SPIDER-MAN DI MOBILE
+   Override ini diletakkan paling akhir agar
+   mengalahkan aturan responsive sebelumnya.
+========================================= */
+
+@media (max-width: 760px) {
+  .hero-banner {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-character-reveal {
+    width: 62%;
+    height: 116%;
+    right: -1%;
+    bottom: -7%;
+  }
+
+  .hero-character-reveal .hero-banner__character,
+  .hero-character-reveal .hero-face-reveal {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-banner {
+    height: 285px;
+  }
+
+  .hero-character-reveal {
+    width: 68%;
+    height: 122%;
+    right: -3%;
+    bottom: -8%;
+  }
+
+  .hero-banner__copy {
+    top: 28%;
+    left: 5%;
+    max-width: 58%;
+  }
+
+  .hero-banner__copy strong {
+    font-size: clamp(23px, 6.5vw, 31px);
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-banner {
+    height: 270px;
+  }
+
+  .hero-character-reveal {
+    width: 72%;
+    height: 124%;
+    right: -5%;
+    bottom: -8%;
+  }
+
+  .hero-banner__copy {
+    max-width: 55%;
+  }
+
+  .hero-banner__copy strong {
+    font-size: 22px;
   }
 }
