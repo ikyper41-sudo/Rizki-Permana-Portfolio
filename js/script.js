@@ -34,10 +34,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "Website layanan kunci keyless mobil dan motor",
         "Website cafe dengan tampilan elegan dan menu digital",
         "Website jasa laundry dengan informasi layanan dan harga",
+        "Website AUTOCARE dengan informasi layanan dan detailing",
         "Template Instagram untuk bisnis kuliner dan cafe",
         "Desain album foto, photo collage dan scrapbook digital",
         "Katalog produk hijab dan fashion collection",
-        "Desain promosi produk dan menu minuman kopi",
         "Desain iklan produk makanan dan minuman",
         "Desain banner, poster dan kebutuhan visual bisnis"
       ],
@@ -91,10 +91,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "Car and motorcycle keyless service website",
         "Elegant cafe website featuring a digital menu",
         "Laundry service website with service and pricing information",
-        "Instagram templates for food businesses and cafes",
+        "AUTOCARE website featuring detailing services and information",
+        "Instagram feed templates for food businesses and cafes",
         "Photo albums, photo collages, and digital scrapbook designs",
         "Hijab product catalog and fashion collection",
-        "Coffee product and beverage promotional designs",
         "Food and beverage product advertising designs",
         "Banners, posters, and business visual design"
       ],
@@ -123,8 +123,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const languageButtons = document.querySelectorAll(".lang-btn");
 
-  let currentLanguage =
-    localStorage.getItem("portfolio-language") || "id";
+  let currentLanguage = "id";
+
+  try {
+    currentLanguage = localStorage.getItem("portfolio-language") || "id";
+  } catch (error) {
+    // Gunakan Bahasa Indonesia jika localStorage diblokir browser.
+  }
 
   if (!translations[currentLanguage]) {
     currentLanguage = "id";
@@ -145,6 +150,21 @@ document.addEventListener("DOMContentLoaded", () => {
     if (element) {
       element.innerHTML = value;
     }
+  }
+
+  // Ubah teks label tanpa menghapus ikon dekoratif di dalamnya.
+  function updateSectionLabel(selector, value) {
+    const element = document.querySelector(selector);
+    if (!element) return;
+
+    const icon = element.querySelector("i");
+    element.textContent = "";
+
+    if (icon) {
+      element.appendChild(icon);
+    }
+
+    element.append(document.createTextNode(` ${value}`));
   }
 
   function changeLanguage(language) {
@@ -203,7 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ABOUT
     // -----------------------------------------
 
-    setText(".about__content .section-label", t.aboutLabel);
+    updateSectionLabel(".about__content .section-label", t.aboutLabel);
 
     setHTML(
       ".about__content .section-title",
@@ -212,13 +232,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setText(".about__content > p", t.aboutDescription);
 
-    setText(".about__content .button--small", t.aboutMore);
+    setHTML(
+      ".about__content .button--small",
+      `${t.aboutMore} <b>→</b>`
+    );
 
     // -----------------------------------------
     // PROJECTS
     // -----------------------------------------
 
-    setText(".projects > .page-wrap > .section-label", t.projectLabel);
+    updateSectionLabel(".projects > .page-wrap > .section-label", t.projectLabel);
 
     setText(".projects__heading .section-title", t.projectTitle);
 
@@ -248,7 +271,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // SKILLS
     // -----------------------------------------
 
-    setText(".skills__intro .section-label", t.skillsLabel);
+    updateSectionLabel(".skills__intro .section-label", t.skillsLabel);
     setText(".skills__intro .section-title", t.skillsTitle);
     setText(".skills__intro > p", t.skillsDescription);
 
@@ -261,7 +284,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // CONTACT
     // -----------------------------------------
 
-    setText(".contact__copy .section-label", t.contactLabel);
+    updateSectionLabel(".contact__copy .section-label", t.contactLabel);
     setText(".contact__copy h2", t.contactTitle);
     setText(".contact__copy p", t.contactDescription);
 
@@ -296,8 +319,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Update document language
     document.documentElement.lang = language;
 
-    // Save selected language
-    localStorage.setItem("portfolio-language", language);
+    // Simpan bahasa jika localStorage tersedia.
+    try {
+      localStorage.setItem("portfolio-language", language);
+    } catch (error) {
+      // Penggantian bahasa tetap berjalan meskipun penyimpanan diblokir.
+    }
   }
 
   // Language button events
