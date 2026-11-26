@@ -468,14 +468,6 @@ img {
   height: 210px;
 }
 
-.web--right {
-  top: 350px;
-  right: -220px;
-  width: 350px;
-  height: 350px;
-  transform: rotate(90deg);
-}
-
 /* 5. ABOUT SECTION */
 .about {
   display: grid;
