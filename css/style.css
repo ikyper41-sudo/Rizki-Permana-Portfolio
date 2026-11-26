@@ -1367,156 +1367,6 @@ a.contact__item:hover .contact__item-arrow {
 
 
 
-/* ===================================
-   SPIDER-MAN DARK SPOTLIGHT REVEAL
-=================================== */
-
-.hero-character-reveal {
-  --spot-x: 50%;
-  --spot-y: 30%;
-  --spot-radius: 125px;
-
-  position: absolute;
-  z-index: 4;
-  right: 2%;
-  bottom: -4%;
-  width: 48%;
-  height: 112%;
-  cursor: crosshair;
-  animation: character-float 6s ease-in-out infinite;
-}
-
-/* Gambar Spider-Man */
-
-/* GAMBAR SPIDER-MAN */
-.hero-character-reveal .hero-banner__character {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center bottom;
-  z-index: 1;
-
-  opacity: 1;
-  transition: opacity .65s ease;
-  pointer-events: none;
-}
-
-/* GAMBAR RIZKI */
-.hero-character-reveal .hero-face-reveal {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center bottom;
-  z-index: 2;
-  pointer-events: none;
-
-  opacity: 0;
-  clip-path: none;
-
-  transition: opacity .65s ease;
-}
-
-/* SAAT KURSOR MENDEKAT */
-.hero-character-reveal.is-active .hero-banner__character {
-  opacity: 0;
-}
-
-.hero-character-reveal.is-active .hero-face-reveal {
-  opacity: 1;
-}
-
-
-/* DARK SPOTLIGHT MENYATU DENGAN BACKGROUND KANAN */
-.hero-character-reveal::after {
-  content: "";
-  position: absolute;
-  inset: -2%;
-  z-index: 3;
-  pointer-events: none;
-
-  opacity: 0;
-  transition: opacity .65s ease;
-
-  background:
-    radial-gradient(
-      ellipse 75% 70% at 85% 50%,
-      rgba(15, 0, 0, .12) 0%,
-      rgba(15, 0, 0, .28) 48%,
-      rgba(15, 0, 0, .72) 100%
-    );
-
-  mix-blend-mode: multiply;
-}
-
-/* Saat efek aktif */
-.hero-character-reveal.is-active::after {
-  opacity: 1;
-}
-
-
-/* Gambar Rizki: ukuran dan posisi sama dengan Spider-Man */
-.hero-face-reveal {
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: contain;
-  object-position: center bottom;
-
-  opacity: 0;
-  clip-path: circle(0 at var(--spot-x) var(--spot-y));
-
-  transition:
-    opacity .25s ease,
-    clip-path .08s linear;
-
-  pointer-events: none;
-}
-
-/* Saat spotlight aktif */
-.hero-character-reveal.is-active::after {
-  opacity: 1;
-}
-
-.hero-character-reveal.is-active .hero-face-reveal {
-  opacity: 1;
-  clip-path: circle(
-    var(--spot-radius) at var(--spot-x) var(--spot-y)
-  );
-}
-
-/* Responsive */
-@media (max-width: 760px) {
-  .hero-character-reveal {
-    width: 45%;
-    height: 105%;
-    right: 2%;
-    --spot-radius: 95px;
-  }
-}
-
-@media (max-width: 520px) {
-  .hero-character-reveal {
-    width: 49%;
-    height: 100%;
-    right: 0;
-    --spot-radius: 85px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-character-reveal {
-    animation: none;
-  }
-}
-
 /* POSISI SCROLL MOUSE DI TENGAH */
 .scroll-cue {
   position: relative;
@@ -1714,6 +1564,12 @@ a.contact__item:hover .contact__item-arrow {
     url("../assets/images/projects/laundery.png");
 }
 
+.project-image--AUTOCARE {
+  background-image:
+    linear-gradient(120deg, #d9c1a022, #fff0),
+    url("../assets/images/projects/AUTOCARESTUDIO.png");
+}
+
 /* Thumbnail graphic design */
 .project-image--instagram {
   background-image:
@@ -1728,11 +1584,6 @@ a.contact__item:hover .contact__item-arrow {
 .project-image--catalog {
   background-image:
     url("../assets/images/projects/product-catalog.png");
-}
-
-.project-image--poster {
-  background-image:
-    url("../assets/images/projects/promotional-poster.png");
 }
 
 .project-image--scrapbook {
@@ -1876,160 +1727,6 @@ a.contact__item:hover .contact__item-arrow {
 }
 
 
-/* =========================================
-   SPIDER-MAN CINEMATIC FACE REVEAL
-========================================= */
-
-.hero-character-reveal {
-  position: absolute;
-  z-index: 4;
-  right: 2%;
-  bottom: -4%;
-  width: 48%;
-  height: 112%;
-
-  --spot-x: 50%;
-  --spot-y: 30%;
-  --spot-radius: 145px;
-
-  cursor: default;
-
-  animation: hero-float 8s ease-in-out infinite;
-}
-
-/* GAMBAR SPIDER-MAN UTAMA */
-.hero-character-reveal .hero-banner__character {
-  position: absolute;
-  inset: 0;
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: contain;
-  object-position: center bottom;
-
-  z-index: 1;
-  opacity: 1;
-
-  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.2));
-
-  transition: opacity 1.2s ease;
-
-  pointer-events: none;
-}
-
-/* GAMBAR WAJAH */
-.hero-character-reveal .hero-face-reveal {
-  position: absolute;
-  inset: 0;
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: contain;
-  object-position: center bottom;
-
-  z-index: 2;
-  opacity: 0;
-
-  clip-path: circle(
-    0px at var(--spot-x) var(--spot-y)
-  );
-
-  transition:
-    opacity 1s ease,
-    clip-path 1.2s cubic-bezier(.22, 1, .36, 1);
-
-  pointer-events: none;
-}
-
-/* SAAT EFEK AKTIF */
-.hero-character-reveal.is-active
-.hero-banner__character {
-  opacity: 0.15;
-}
-
-.hero-character-reveal.is-active
-.hero-face-reveal {
-  opacity: 1;
-
-  clip-path: circle(
-    var(--spot-radius) at var(--spot-x) var(--spot-y)
-  );
-}
-
-/* CAHAYA HALUS */
-.hero-character-reveal::after {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  z-index: 3;
-  pointer-events: none;
-
-  opacity: 0;
-
-  background: radial-gradient(
-    circle at var(--spot-x) var(--spot-y),
-    rgba(255, 255, 255, 0.08) 0%,
-    transparent 65%
-  );
-
-  transition: opacity 1.2s ease;
-}
-
-.hero-character-reveal.is-active::after {
-  opacity: 1;
-}
-
-/* ANIMASI MELAYANG */
-@keyframes hero-float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-3px);
-  }
-}
-
-/* TABLET */
-@media (max-width: 760px) {
-  .hero-character-reveal {
-    width: 45%;
-    height: 105%;
-    right: 2%;
-
-    --spot-radius: 110px;
-  }
-}
-
-/* MOBILE */
-@media (max-width: 520px) {
-  .hero-character-reveal {
-    width: 49%;
-    height: 100%;
-    right: 0;
-
-    --spot-radius: 90px;
-  }
-}
-
-/* AKSESIBILITAS */
-@media (prefers-reduced-motion: reduce) {
-  .hero-character-reveal {
-    animation: none;
-  }
-
-  .hero-character-reveal .hero-face-reveal,
-  .hero-character-reveal .hero-banner__character {
-    transition: none;
-  }
-}
-
-
-
 /* =========================================================
    17. PAGE ENTRANCE REVEAL
    Digunakan bersama JavaScript IntersectionObserver.
@@ -2068,20 +1765,6 @@ a.contact__item:hover .contact__item-arrow {
 
 [data-reveal="zoom"].is-visible {
   transform: translateY(0) scale(1);
-}
-
-/*
-  Karakter hero tetap memakai animasi hero-float yang sudah ada.
-  Karena itu, bagian ini hanya menganimasikan opacity agar
-  transform dari hero-float tidak saling bertabrakan.
-*/
-.hero-character-reveal[data-reveal="hero-image"] {
-  opacity: 0;
-  transition: opacity .9s ease;
-}
-
-.hero-character-reveal[data-reveal="hero-image"].is-visible {
-  opacity: 1;
 }
 
 /* Project muncul bergantian */
@@ -2147,12 +1830,101 @@ a.contact__item:hover .contact__item-arrow {
 }
 
 
-/* =========================================
-   FIX POSISI KEPALA SPIDER-MAN DI MOBILE
-   Override ini diletakkan paling akhir agar
-   mengalahkan aturan responsive sebelumnya.
-========================================= */
+/* =========================================================
+   18. HERO CHARACTER — SINGLE SOURCE OF TRUTH
+   Satu aturan untuk Spider-Man, face reveal, dan responsif.
+   ========================================================= */
+.hero-character-reveal {
+  --spot-x: 50%;
+  --spot-y: 30%;
+  --spot-radius: 145px;
 
+  position: absolute;
+  z-index: 4;
+  right: 2%;
+  bottom: -4%;
+  width: 48%;
+  height: 112%;
+  cursor: crosshair;
+  isolation: isolate;
+  animation: hero-float 8s ease-in-out infinite;
+}
+
+.hero-character-reveal .hero-banner__character,
+.hero-character-reveal .hero-face-reveal {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  pointer-events: none;
+}
+
+.hero-character-reveal .hero-banner__character {
+  z-index: 1;
+  opacity: 1;
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, .2));
+  transition: opacity .65s ease;
+}
+
+.hero-character-reveal .hero-face-reveal {
+  z-index: 3;
+  opacity: 0;
+  clip-path: circle(0 at var(--spot-x) var(--spot-y));
+  transition:
+    opacity .65s ease,
+    clip-path .08s linear;
+}
+
+.hero-character-reveal::after {
+  content: "";
+  position: absolute;
+  inset: -2%;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(
+    ellipse 75% 70% at var(--spot-x) var(--spot-y),
+    rgba(15, 0, 0, .08) 0%,
+    rgba(15, 0, 0, .22) 48%,
+    rgba(15, 0, 0, .58) 100%
+  );
+  mix-blend-mode: multiply;
+  transition: opacity .65s ease;
+}
+
+.hero-character-reveal.is-active .hero-banner__character {
+  opacity: .15;
+}
+
+.hero-character-reveal.is-active .hero-face-reveal {
+  opacity: 1;
+  clip-path: circle(var(--spot-radius) at var(--spot-x) var(--spot-y));
+}
+
+.hero-character-reveal.is-active::after {
+  opacity: 1;
+}
+
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+/* Entrance reveal hanya mengatur opacity pada karakter,
+   agar transform animasi melayang tidak saling bertabrakan. */
+.hero-character-reveal[data-reveal="hero-image"] {
+  opacity: 0;
+  transform: none;
+  transition: opacity .9s ease;
+}
+
+.hero-character-reveal[data-reveal="hero-image"].is-visible {
+  opacity: 1;
+}
+
+/* Tablet */
 @media (max-width: 760px) {
   .hero-banner {
     position: relative;
@@ -2164,17 +1936,11 @@ a.contact__item:hover .contact__item-arrow {
     height: 116%;
     right: -1%;
     bottom: -7%;
-  }
-
-  .hero-character-reveal .hero-banner__character,
-  .hero-character-reveal .hero-face-reveal {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center bottom;
+    --spot-radius: 110px;
   }
 }
 
+/* Mobile */
 @media (max-width: 520px) {
   .hero-banner {
     height: 285px;
@@ -2185,6 +1951,7 @@ a.contact__item:hover .contact__item-arrow {
     height: 122%;
     right: -3%;
     bottom: -8%;
+    --spot-radius: 90px;
   }
 
   .hero-banner__copy {
@@ -2198,6 +1965,7 @@ a.contact__item:hover .contact__item-arrow {
   }
 }
 
+/* Ponsel sangat kecil */
 @media (max-width: 360px) {
   .hero-banner {
     height: 270px;
@@ -2208,6 +1976,7 @@ a.contact__item:hover .contact__item-arrow {
     height: 124%;
     right: -5%;
     bottom: -8%;
+    --spot-radius: 80px;
   }
 
   .hero-banner__copy {
@@ -2218,43 +1987,14 @@ a.contact__item:hover .contact__item-arrow {
     font-size: 22px;
   }
 }
-/* FIX RESPONSIVE MOBILE - MENCEGAH GESER KANAN KIRI */
-html,
-body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-img,
-video,
-iframe {
-  max-width: 100%;
-}
-
-@media (max-width: 760px) {
-  body {
-    overflow-x: hidden;
+@media (prefers-reduced-motion: reduce) {
+  .hero-character-reveal {
+    animation: none;
   }
 
-  .container {
-    width: 100%;
-    max-width: 100%;
-  }
-}
-/* SEMBUNYIKAN JARING DI LUAR LAYAR HP */
-@media (max-width: 760px) {
-  .web--right {
-    display: none !important;
-  }
-
-  .web--top-left {
-    display: none !important;
+  .hero-character-reveal .hero-face-reveal,
+  .hero-character-reveal .hero-banner__character {
+    transition: none;
   }
 }
