@@ -1998,3 +1998,120 @@ a.contact__item:hover .contact__item-arrow {
     transition: none;
   }
 }
+
+
+/* =========================================================
+   MOBILE VIEWPORT FIX — cegah halaman bergeser ke kiri/kanan
+   ========================================================= */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+body {
+  position: relative;
+}
+
+main,
+header,
+footer,
+section,
+.page-wrap {
+  min-width: 0;
+  max-width: 100%;
+}
+
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+@media (max-width: 760px) {
+  /* Hiasan web di luar layar tidak boleh memperlebar viewport HP. */
+  .web--right {
+    display: none;
+  }
+
+  .header {
+    max-width: 100%;
+    min-width: 0;
+    flex-wrap: nowrap;
+  }
+
+  .brand {
+    flex: 0 1 auto;
+    min-width: 0;
+  }
+
+  .button--header,
+  .language-switcher,
+  .menu-toggle {
+    flex: 0 0 auto;
+  }
+
+  .hero,
+  .about,
+  .projects,
+  .skills,
+  .contact,
+  .footer {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .hero-banner,
+  .about__visual,
+  .contact__inner {
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .hero__copy,
+  .about__content,
+  .projects__heading,
+  .skills__intro,
+  .contact__copy,
+  .contact__details {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .hero__name,
+  .section-title {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .project-grid,
+  .skills-grid,
+  .contact__inner {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .header {
+    width: 92%;
+    gap: 6px;
+  }
+
+  .button--header {
+    white-space: nowrap;
+  }
+
+  .language-switcher {
+    gap: 1px;
+    padding: 3px;
+  }
+
+  .lang-btn {
+    width: 29px;
+    height: 28px;
+  }
+}
